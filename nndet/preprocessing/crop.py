@@ -205,7 +205,8 @@ class ImageCropper(object):
         if output_dir_gt.is_dir():
             shutil.rmtree(output_dir_gt)
         source_dir_gt = case_files[0][-1].parent
-        shutil.copytree(source_dir_gt, output_dir_gt)
+        os.system('cp -r ' + str(source_dir_gt) + '/* ' + str(output_dir_gt))
+        # shutil.copytree(source_dir_gt, output_dir_gt)
 
     def process_data(self, case: List[Path], case_id: str, overwrite_existing: bool = False):
         """

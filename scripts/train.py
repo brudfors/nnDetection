@@ -472,6 +472,7 @@ def _evaluate(
             scores, curves = evaluate_seg_dir(
                 pred_dir=pred_dir,
                 gt_dir=gt_dir,
+                classes=list(data_cfg["labels"].keys())
                 )
             save_metric_output(scores, curves, save_dir, "results_seg")
         if do_instances_eval:

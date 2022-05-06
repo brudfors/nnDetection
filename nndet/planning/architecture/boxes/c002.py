@@ -253,7 +253,9 @@ class BoxC002(BoxC001):
             target_spacing_transposed=target_spacing_transposed,
             transpose_forward=transpose_forward,
         )
-
+        # print(boxes_np_full)
+        # boxes_np = self.filter_boxes(boxes_np_full, upper_percentile=99.999, lower_percentile=0.001)
+        # print(boxes_np)
         boxes_np = self.filter_boxes(boxes_np_full)
         logger.info(f"Filtered {boxes_np_full.shape[0] - boxes_np.shape[0]} "
                     f"boxes, {boxes_np.shape[0]} boxes remaining for anchor "
